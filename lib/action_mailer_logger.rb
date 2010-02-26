@@ -1,5 +1,3 @@
-require "action_mailer"
-
 ActionMailer::Base.class_eval do
   alias_method :initialize_aliased_by_action_mailer_logger, :initialize
 

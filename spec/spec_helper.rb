@@ -1,3 +1,4 @@
+require "action_mailer"
 require File.dirname(__FILE__) + "/../lib/action_mailer_logger"
 
 ActionMailer::Base.template_root = File.dirname(__FILE__) + "/action_mailer_logger/templates"
