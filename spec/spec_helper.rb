@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + "/../lib/action_mailer_logger"
 
-ActionMailer::Base.template_root = File.dirname(__FILE__) + "/templates"
+ActionMailer::Base.template_root = File.dirname(__FILE__) + "/action_mailer_logger/templates"
 ActionMailer::Base.delivery_method = :test
 
 class UserMailer < ActionMailer::Base
