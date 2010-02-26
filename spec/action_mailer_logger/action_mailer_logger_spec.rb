@@ -2,7 +2,6 @@ require "spec_helper"
 
 describe ActionMailer do
   before do
-    ActionMailerLogger.logging_class = MailerLogger
     MailerLogger.delete_all
   end
 
@@ -10,12 +9,6 @@ describe ActionMailer do
     lambda {
       UserMailer.deliver_signup
     }.should change { ActionMailer::Base.deliveries.size }.by(1)
-  end
-
-  it "should be able to set the logging class" do
-    a_class = Class.new
-    ActionMailerLogger.logging_class = a_class
-    ActionMailerLogger.logging_class.should == a_class
   end
 
   it "should log when an email gets sent" do

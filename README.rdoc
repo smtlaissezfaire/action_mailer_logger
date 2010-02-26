@@ -7,7 +7,3 @@ Log all ActionMailerLogger delivers to the database.
   ./script/generate action_mailer_logger
 
   rake db:migrate
-
-Stuff this at the bottom of environment.rb (or in an initializer):
-
-  ActionMailerLogger.logging_class = MailerLogger

@@ -1,11 +1,5 @@
 require "action_mailer"
 
-class ActionMailerLogger
-  class << self
-    attr_accessor :logging_class
-  end
-end
-
 ActionMailer::Base.class_eval do
   alias_method :initialize_aliased_by_action_mailer_logger, :initialize
 
@@ -43,7 +37,7 @@ private
   end
 
   def database_log(mail, delivered)
-    ActionMailerLogger.logging_class.create!({
+    MailerLogger.create!({
       :class_name   => self.class.to_s,
       :method_name  => @method_name,
       :mailer       => mail,
